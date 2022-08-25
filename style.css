@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700&family=Ibarra+Real+Nova&family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+  
+body{
+    font-family: "Mulish";
+    font-style: normal;
+    background-image: url(./Images/restaurant.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    height: 100vh;
+    overflow: hidden;
+}
+  
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 250px;
+}
+  
+h1{
+    width: 830px;
+    height: 75px;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 75px;
+    text-align: center;
+}
+
+span{
+    font-weight: 800;
+}
+
+.home-text{
+    padding-top: 32px;
+}
+  
+p{
+    width: 822px;
+    height: 62px;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 31px;
+    text-align: center;
+}
+  
+.home-cursor{
+    font-size: 60px;
+    margin-top: 16px;
+}
+  
+.left-cursor{
+    position: absolute;
+    left: 3.82%;
+    right: 94.79%;
+}
+  
+.right-cursor{
+    position: absolute;
+    left: 94.44%;
+    right: 4.17%;
+    float: right;
+}
+  
+.menu-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 96px;
+}
+  
+button{
+    width: 250px;
+    height: 80px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 2px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 38px;
+    font-family: 'Mulish';
+}
+  
+.cart{
+    margin-left: 16px;
+}
+
+a :hover{
+    background-color: peachpuff;
+    color: black;
+}
+/*<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>*/
