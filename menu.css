@@ -6,7 +6,7 @@
 body{
     width: 100%;
     max-width: 100%;
-    font-family: "Mulish", sans-serif;
+    font-family: "Mulish";
 }
   
 main{
@@ -35,7 +35,7 @@ main{
   
 .brand{
     color: #f1d5bb;
-    font-family: "Baloo Bhai 2", cursive;
+    font-family: "Baloo Bhai 2";
     font-size: 64px;
 }
   
