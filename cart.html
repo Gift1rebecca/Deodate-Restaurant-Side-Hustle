@@ -46,13 +46,133 @@
         <h2>CART</h2>
       <hr>
         <div class="cart-price">
+          <div class="small-container">
+            <table id="myTable" class="table">
+              <tr>
+                <td>
+                  <div class="img-prdct">
+                    <img src="./Images/Jollof-and-Beef-or-Chicken-min-1-1024x735.jpg">
+                  </div>
+                </td>
+                <td>
+                  <div class="food-name">
+                    <p>Jollof Rice</p>
+                    <input type="text" value="500" class="price form-control" disabled/>
+                  </div>
+                </td>
+                <td>
+                  <div class="button-container">
+                    <button class="cart-qty-plus" type="button" value="+">+</button>
+                    <input type="text" name="qty" min="0" class="qty form-control" value="1"/>
+                    <button class="cart-qty-minus" type="button" value="-">-</button>
+                  </div>
+                </td>
+                <td>
+                  <p><img src ="./Images/Path.png"/></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="img-prdct">
+                    <img src="./Images/fried rice.jpg">
+                  </div>
+                </td>
+                <td>
+                  <div class="food-name">
+                    <p>Fried Rice</p>
+                    <input type="text" value="500" class="price form-control" disabled/>
+                  </div>
+                </td>
+                <td>
+                  <div class="button-container">
+                    <button class="cart-qty-plus" type="button" value="+">+</button>
+                    <input type="text" name="qty" min="0" class="qty form-control" value="1"/>
+                    <button class="cart-qty-minus" type="button" value="-">-</button>
+                  </div>
+                </td>
+                <td>
+                  <p><img src ="./Images/Path.png"/></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="img-prdct">
+                    <img src="./Images/ofada.jpeg">
+                  </div>
+                </td>
+                <td>
+                  <div class="food-name">
+                    <p>Ofada Rice</p>
+                    <input type="text" value="500" class="price form-control" disabled/>
+                  </div>
+                </td>
+                <td>
+                  <div class="button-container">
+                    <button class="cart-qty-plus" type="button" value="+">+</button>
+                    <input type="text" name="qty" min="0" class="qty form-control" value="1"/>
+                    <button class="cart-qty-minus" type="button" value="-">-</button>
+                  </div>
+                </td>
+                <td>
+                  <p><img src ="./Images/Path.png"/></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="img-prdct">
+                    <img src="./Images/beans.jpg">
+                  </div>
+                </td>
+                <td>
+                  <div class="food-name">
+                    <p>Beans and Plantain</p>
+                    <input type="text" value="500" class="price form-control" disabled/>
+                  </div>
+                </td>
+                <td>
+                  <div class="button-container">
+                    <button class="cart-qty-plus" type="button" value="+">+</button>
+                    <input type="text" name="qty" min="0" class="qty form-control" value="1"/>
+                    <button class="cart-qty-minus" type="button" value="-">-</button>
+                  </div>
+                </td>
+                <td>
+                  <p><img src ="./Images/Path.png"/></p>
+                </td>
+              </tr>
 
+
+            </table>
+          </div>
         </div>
         <div class="cart-order">
+          <div class="subtotal">
+            <p class="math"> Your Subtotal</p>
 
+            <div id="cart-plus">
+              <table class="plus">
+                <tr>
+                  <td>
+                    <p>Subtotal</p>
+                  </td>
+                  <td>#<span id="amount" class="amount">0</span> </td>
+                </tr>
+              </table>
+            </div>
+
+            <input class="smt" type="submit" value="Confirm Order"/>
+          </div>
         </div>
         <div class="cart-purchase">
-
+          <div class="subtotal">
+            <p class="math"> Promo Code</p>
+          </div>
+          <div class="promo-code">
+            <input class="promo" type="text" value="enter promo code"/>
+          </div>
+            <input class="apply" type="submit" value="Apply"/>
+          </div>
+        </div>
         </div>
       </div>  
 
@@ -61,6 +181,50 @@
   </main>
   <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
 </body>
+<script>
+  $(document).ready(function(){
+    update_amounts();
+    $('.qty, .price').on('keyup keypress blur change',
+    function(e){
+      update_amounts();
+    });
+  });
 
+  function update_amounts() {
+    var sum =0.0;
+    $('#myTable > tr').each (function() {
+      var qty = $(this).find('qty').val();
+      var price = $(this).find('price').val();
+      var amount = (qty*price)
+      sum += amount;
+      $(this).find('amount').text(''+amount);
+    });
+    $('table').text(sum);
+  }
+
+  //for increment and decrement//
+  var incrementQty;
+  var decrementQty;
+  var plusBtn =$(".cart-qty-plus");
+  var minusBtn =$(".cart-qty-minus");
+  var incrementQty=plusBtn.click(function(){
+    var $n = $(this)
+    .parent(".button-container")
+    .find(".qty");
+    $n.val(Number($n.val())+1);
+    update_amounts();
+  });
+
+  var decrementQty=minusBtn.click(function(){
+    var $n = $(this)
+    .parent(".button-container")
+    .find(".qty");
+    var QtyVal=Number($n.val());
+    if (QtyVal > 0){
+      $n.val(QtyVal - 1);
+    }
+    update_amounts();
+  });
+</script>
 
 </html>
